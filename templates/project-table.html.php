@@ -104,11 +104,38 @@
         <?php
             foreach($projects as $project){
                 echo "<tr class='project-table-row'>";
-                    echo "<td class='project-data'>" . "<a target='_blank' class='project-data-link' href='" . $project['link'] . "'>" . $project['alias'] . "</a>" . "</td>";
+                    $current_link = $project['link'];
+                    $open_link = "window.open($current_link)";
+                    echo "<td class='project-data' id='project-data' name='this'>" . $project['alias'] . "</td>";
                     echo "<td class='project-data'>" . $project['type'] . "</td>";
-
                 echo "</tr>";
             } 
         ?>
     </table>
 </div>
+<script>
+    const project_links = [
+        'https://devpost.com/software/bull-run-h07qwt',
+        'https://foundonmars.xyz/',
+        'https://github.com/W3bbieLabs/GM',
+        'https://github.com/W3bbieLabs/GoerliSepoliaProphouseDesign',
+        'https://devpost.com/software/hack-or-die',
+        'https://w3bbie.xyz/artclass/',
+        'https://nastypass.xyz/',
+        'https://repus.us/',
+        'https://w3bbie.xyz/ethonline/',
+        'https://opensea.io/collection/teknomancers',
+        'https://podcasters.spotify.com/pod/show/w3bbie/episodes/EP-1--W3bbie-and-Lil-Nouns-A-Shared-Journey-Toward-Decentralization-e293h38',
+        'https://w3bbie.xyz/yolo/',
+        'https://w3bbie.xyz/ethglobal/'
+    ];
+    const projects = document.querySelectorAll('#project-data');
+    console.log(projects);
+    projects.forEach( (project, index) => {
+        project.addEventListener('click', (event)=>{
+            let current_link = project_links[index]
+            console.log('opening', current_link);
+            window.open(current_link);
+        });
+    });
+</script>

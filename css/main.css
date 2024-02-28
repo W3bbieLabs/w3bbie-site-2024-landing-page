@@ -22,15 +22,19 @@ main {
 	gap:16px;
 	height:100%;
 	padding-top: 144px;
-	padding-bottom: 232px;
+	padding-bottom: 420px;
 	width:100%;
 }
 
 /*------------------------------------------------------------*/
 /* NAVIGATION */
 .w3bbie-logo{ 
+	position: relative;
+
+	float:left;
 	height:44px; 
 	width:44px;
+	line-height: 0;
 }
 .w3bbie-logo:hover {
 	animation-name: rotate-slow;
@@ -41,25 +45,27 @@ main {
 .main-nav-col {
 	display: flex;
 	flex-direction: column;
-	align-items: start;
+	align-items: center;
 	justify-content: start;
 	gap:0;
 	width: 100%;
-	padding:16px;
+	padding:0px;
 }
 .main-navigation-bar {
+	background: var(--webbie_black);
 	position: fixed;
 	top:0;
 	left:0;
-	background:transparent;
-	height:auto;
+	opacity:0.92;
+	padding:16px;
+	height: auto;
 	text-transform: uppercase;
 	width:				100%;
 	display: 			flex;
 	align-items: 		center;
 	justify-content: 	start;
-	flex-direction: 	row;
-	gap:				2px;
+	flex-direction: 	column;
+	gap:				0;
 }
 .site-icon {
 	display: flex;
@@ -79,17 +85,26 @@ main {
 	text-decoration: none;
 }
 .cta-link:hover{
-	background: var(--webbie_black);
-	color: white;
+	background: white;
+	color: var(--webbie_black);
 }
+.slogan{
+	align-items: center;
+	justify-content: start;
+	display: flex;
+	flex-direction: row;
+	
+	width:100%;
+}
+
 .ctas {
 	height:100%;
 	width:100%;
-	align-items: start;
+	align-items: center;
 	justify-content: start;
 	display: flex;
-	flex-direction: column;
-	gap:0px;
+	flex-direction: row;
+	gap:16px;
 	
 	
 }
@@ -173,10 +188,10 @@ main {
 /*------------------------------------------------------------*/
 /* ENCODED TEXT  */
 .encryption {
-	background:inherit;
+	background:var(--webbie_black);
 	position: 				fixed;
 	width:					100%;
-	
+	z-indeX:10;
 	bottom:					0;
 height:					fit-content;
 }
@@ -243,21 +258,39 @@ height:					fit-content;
 .stat-table {
 	color:  	white;
 	width: 		100%;
+	height:100%;
 	text-align: left;
 	font-size: 100%;
 	
 	border-collapse: collapse;
 }
-@media (max-width:840px){
-	.project-table,
-	.stat-table {
-		font-size: 92%;
-	}
-}
-@media (max-width:620px){
+@media (max-width:1080px){
+	.main-navigation-bar,
 	.project-table,
 	.stat-table {
 		font-size: 84%;
+	}
+}
+@media (max-width:840px){
+	.main-navigation-bar,
+	.project-table,
+	.stat-table {
+		font-size: 77%;
+	}
+}
+@media (max-width:620px){
+	.main-navigation-bar,
+	.project-table,
+	.stat-table {
+		font-size: 72%;
+	}
+}
+
+@media (max-width:488px){
+	.main-navigation-bar,
+	.project-table,
+	.stat-table {
+		font-size: 64%;
 	}
 }
 
@@ -274,6 +307,17 @@ height:					fit-content;
 	border:none;
 }
 
+#project-data {
+	text-decoration: underline;
+}
+
+#project-data:hover{
+	text-decoration: none;
+	cursor: pointer;
+	background: white;
+	color:var(--webbie_black);
+}
+
 .project-data,
 .stat {
 	font-size: 				108%;
@@ -286,10 +330,10 @@ height:					fit-content;
 	text-decoration:none; 
 	color: inherit;
 }
-.project-data:hover,
+
 .stat:hover {
-	background: black;
-	color: white;
+	background: springgreen;
+	color: var(--webbie_black);
 
 }
 .project-table-heading,
@@ -407,9 +451,9 @@ height:					fit-content;
 /*------------------------------------------------------------*/
 /* HEADLINES & RABBIT HOLES */
 .headline-section-heading {
-	padding:			0px;
-	display: flex;
-	gap:2px;
+	padding:		0px;
+	display: 		flex;
+	gap:			2px;
 	flex-direction: column;
 	text-transform: 	uppercase;
 	color: 				rgb(255,255,255,0.9);
@@ -442,25 +486,30 @@ height:					fit-content;
 /* AUX MP3/WAV PLAYER */
 
 .whos-on-the-aux {
+	position: fixed;
+	bottom:0;
+	left:0;
 	display: 			flex;
-	flex-direction: 	column;
+	flex-direction: 	row;
 	align-items: 		center;
 	text-transform: 	uppercase;
-	justify-content: 	space-between;
+	justify-content: 	center;
 	width:				100%;
 	z-index: 			5;
-	gap:				16px;
+	gap:				2px;
+	background: var(--webbie_black);
+opacity:0.92;
 }
 
 .controls {
 	display: 			flex;
-	flex-direction: 	column;
+	flex-direction: 	row;
 	align-items: 		start;
 	justify-content: 	center;
 }
 
 .aux-title::before{
-	content:" [aux] ";
+	content:" *aux* ";
 }
 
 .aux-title::after{

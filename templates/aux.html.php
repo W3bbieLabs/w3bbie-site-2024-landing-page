@@ -54,7 +54,6 @@
 
 <script>
     AUX_MUSIC_PLAYER :{
-
         const aux_player    = document.querySelector('.whos-on-the-aux');
         const channel_name  = document.querySelector('.channel-name');
         const track_details = document.querySelector('.now-playing');
@@ -116,30 +115,6 @@
             console.log('loading next song..');
         });
     }
-    WINDOW_RESIZE: {
-        const check_window_width        = (event) => { return window.innerWidth; };
-        const restore_default           = (content_area) => { 
-            console.log('restoring default')
-            content_area.style.opacity  = 1; 
-        }
-        const identify_fault            = (fault_name) => { console.log(fault_name); }
-        const correct_fault             = (correction_type, content_area) => { 
-            console.log(correction_type);
-            content_area.style.opacity  = 0;
-        }
-        window.addEventListener('resize', ()=>{
-            console.log('window resizing.');
-            const main_content          = document.querySelector('.whos-on-the-aux');
-            const width_minimum_thresh  = 620;
-            let window_too_narrow       = (window.innerWidth <= width_minimum_thresh);
-            if (window_too_narrow){
-                identify_fault('window too narrow.');
-                correct_fault('allowing for breathing room', main_content);
-            } 
-            else{
-                restore_default(main_content);
-            }
-        });
-    }
+   
 
 </script>
